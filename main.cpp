@@ -1,6 +1,7 @@
 #include "Numero.h"
 #include "Hex.h"
 #include "Binario.h"
+#include <bitset>
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -18,6 +19,7 @@ int main() {
 	int NumB;
 	int tipo;
 	int res;
+	string binary;
 	string HEX;
 	while (op!=6) {
 		op = menu();
@@ -60,9 +62,11 @@ int main() {
 				cin >> NumA;
 				cin >> NumB;
 				res = list->at(NumA) - list->at(NumB);
-				cout << "Resultado" << res << "\n";
+				cout << "Resultado: " << res << "\n";
 				HEX = intToHex(res);
-				cout << HEX << "\n";
+				cout << "Hex: 0x" << HEX << "\n";
+				binary = std::bitset<8>(res).to_string();
+				cout << "Bin:" << binary << "\n";
 				break;
 			case 4:
 				Listar(list);
