@@ -143,3 +143,5 @@ string intToHex(int INT) {
 	Hex = sstream.str();
 	return Hex;
 }
+
+//Termine, masomenos :3
