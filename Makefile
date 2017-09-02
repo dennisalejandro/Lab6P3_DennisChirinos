@@ -1,5 +1,5 @@
-frac:	main.cpp Numero.cpp Binario.cpp Hex.cpp
-	g++ -std=c++11 main.cpp Numero.cpp Binario.cpp Hex.cpp
+frac:	main.cpp Numero.cpp Binario.cpp Hex.cpp Oct.cpp
+	g++ -std=c++11 main.cpp Numero.cpp Binario.cpp Hex.cpp Oct.cpp
 
 main.o:	main.cpp Numero.cpp
 	g++ -c main.cpp Numero.cpp

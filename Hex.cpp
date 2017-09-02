@@ -14,7 +14,6 @@ using namespace std;
 	}
 	void Hex::setValue(string a) {
 		int num = std::stoi(a,0,16);
-		//cout << num << ":hex:";
 		ostringstream temp;
 		temp << num;
 		Numero::setValue(temp.str());

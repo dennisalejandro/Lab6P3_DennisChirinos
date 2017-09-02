@@ -1,6 +1,7 @@
 #include "Numero.h"
 #include "Hex.h"
 #include "Binario.h"
+#include "Oct.h"
 #include <bitset>
 #include <iostream>
 #include <string>
@@ -41,7 +42,8 @@ int main() {
 						break;
 					}
 					case 3: {
-						
+						Oct c (input);
+						list->push_back(c);
 						break;
 					}
 					case 4: {
@@ -55,7 +57,12 @@ int main() {
 				Listar(list);
 				cin >> NumA;
 				cin >> NumB;
-				cout << list->at(NumA) + list->at(NumB) << "\n";
+				res = list->at(NumA) - list->at(NumB);
+				cout << "Resultado: " << res << "\n";
+				HEX = intToHex(res);
+				cout << "Hex: 0x" << HEX << "\n";
+				binary = std::bitset<8>(res).to_string();
+				cout << "Bin:" << binary << "\n";
 				break;
 			case 3:
 				Listar(list);
@@ -72,7 +79,12 @@ int main() {
 				Listar(list);
 				cin >> NumA;
 				cin >> NumB;
-				cout << list->at(NumA) * list->at(NumB) << "\n";
+				res = list->at(NumA) - list->at(NumB);
+				cout << "Resultado: " << res << "\n";
+				HEX = intToHex(res);
+				cout << "Hex: 0x" << HEX << "\n";
+				binary = std::bitset<8>(res).to_string();
+				cout << "Bin:" << binary << "\n";
 				break;
 			case 5:
 				break;
@@ -116,6 +128,9 @@ int Type(string str) {
 	}
 	if (x == 'x') {
 		op = 2;
+	}
+	if (x == 'c') {
+		op = 3;
 	}
 
 	
