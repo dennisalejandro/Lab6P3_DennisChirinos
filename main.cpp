@@ -12,6 +12,7 @@ int menu();
 int Listar(vector<Numero>*);
 int Type(string);
 string intToHex(int);
+int octalToDecimal(int);
 int main() {
 	vector<Numero>* list = new vector<Numero>();
 	string input;
@@ -143,5 +144,16 @@ string intToHex(int INT) {
 	Hex = sstream.str();
 	return Hex;
 }
-
+int octalToDecimal(int octalNumber)
+{
+    int decimalNumber = 0, i = 0, rem;
+    while (octalNumber != 0)
+    {
+        rem = octalNumber % 10;
+        octalNumber /= 10;
+        decimalNumber += rem * pow(8, i);
+        ++i;
+    }
+    return decimalNumber;
+}
 //Termine, masomenos :3
